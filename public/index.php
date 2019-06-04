@@ -6,7 +6,6 @@ require '../vendor/autoload.php';
 use \LINE\LINEBot\SignatureValidator as SignatureValidator;
 
 
-
 // initiate app
 $configs =  [
 	'settings' => ['displayErrorDetails' => true],
