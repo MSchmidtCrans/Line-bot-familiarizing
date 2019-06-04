@@ -14,7 +14,7 @@ $app = new Slim\App($configs);
 
 /* ROUTES */
 $app->get('/', function ($request, $response) {
-	return $response->withStatus(100, 'Okido');
+	return $response->withStatus(200, 'Okido');
 });
 
 $app->post('/', function ($request, $response)
