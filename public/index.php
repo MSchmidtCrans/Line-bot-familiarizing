@@ -63,7 +63,7 @@ $signature = $_SERVER['HTTP_X_LINE_SIGNATURE'];
 		}
 
 
-     if(strtolower($userMessage) == 'ok')
+     if(strtolower($userMessage) == 'sticker')
 		{
 	
             $mysticker = new \LINE\LINEBot\MessageBuilder\StickerMessageBuilder("11538", "51626501");
