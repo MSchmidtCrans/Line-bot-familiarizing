@@ -49,7 +49,7 @@ $signature = $_SERVER['HTTP_X_LINE_SIGNATURE'];
 			"originalContentUrl" => "https://example.com/original.mp4",
 			"previewImageUrl" => "https://example.com/preview.jpg"));
 
-            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
+            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\VideoMessageBuilder($message);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 		
