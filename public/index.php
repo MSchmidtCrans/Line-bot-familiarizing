@@ -45,9 +45,9 @@ $signature = $_SERVER['HTTP_X_LINE_SIGNATURE'];
 		$userMessage = $event['message']['text'];
 		if(strtolower($userMessage) == 'hi')
 		{
-			$message = array("type" => "video",
+			$message = json_encode(array("type" => "video",
 			"originalContentUrl" => "https://example.com/original.mp4",
-			"previewImageUrl" => "https://example.com/preview.jpg");
+			"previewImageUrl" => "https://example.com/preview.jpg"));
 
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
