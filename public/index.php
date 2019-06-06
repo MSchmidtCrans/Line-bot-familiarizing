@@ -43,7 +43,7 @@ $signature = $_SERVER['HTTP_X_LINE_SIGNATURE'];
 	foreach ($data['events'] as $event)
 	{
 		$userMessage = $event['message']['text'];
-		$user = $event['source']['userid'];
+		$user = $event['source']['userId'];
 
 		if(strtolower($userMessage) == 'speel lingo')
 		{
