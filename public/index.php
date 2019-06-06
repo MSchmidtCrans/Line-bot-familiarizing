@@ -43,19 +43,18 @@ $signature = $_SERVER['HTTP_X_LINE_SIGNATURE'];
 	foreach ($data['events'] as $event)
 	{
 		$userMessage = $event['message']['text'];
+		$user = $event['source']['user'];
 
 		if(strtolower($userMessage) == 'speel lingo')
 		{
-			$message = 'Wat leuk, laten we snel beginnen...';
-            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
+			//$message = 'Wat leuk, laten we snel beginnen... Verstuur maar een woord suggestie van 4 letters';
+            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($user);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 		
-            $audioMessageBuilder = new \LINE\LINEBot\MessageBuilder\AudioMessageBuilder('https://arcane-wave-28669.herokuapp.com/win.mp3', 3000);
-			$result2 = $bot->replyMessage($event['replyToken'], $audioMessageBuilder);
-			return $result2->getHTTPStatus() . ' ' . $result2->getRawBody();
-
 		}
+
+	
 
 
 	 
