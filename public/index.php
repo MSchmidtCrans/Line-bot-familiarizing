@@ -43,9 +43,9 @@ $signature = $_SERVER['HTTP_X_LINE_SIGNATURE'];
 	foreach ($data['events'] as $event)
 	{
 		$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) == 'hi')
+		if(strtolower($userMessage) == 'speel lingo')
 		{
-			$message = 'Ja hallo daar';
+			$message = 'Wat leuk, laten we snel beginnen...';
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
@@ -53,24 +53,7 @@ $signature = $_SERVER['HTTP_X_LINE_SIGNATURE'];
 		}
 
 
-	   if(strtolower($userMessage) == 'afspraak')
-		{
-			$message = "Kun je vanmiddag om 15:00 ?";
-            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
-			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
-			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
-		
-		}
-
-
-     if(strtolower($userMessage) == 'sticker')
-		{
-	
-            $mysticker = new \LINE\LINEBot\MessageBuilder\StickerMessageBuilder("11538", "51626501");
-			$result = $bot->replyMessage($event['replyToken'], $mysticker);
-			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
-		
-		}
+	 
 
 
 
