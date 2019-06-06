@@ -50,7 +50,7 @@ $signature = $_SERVER['HTTP_X_LINE_SIGNATURE'];
 				"stickerId": "1"
 			  }';
 
-            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\VideoMessageBuilder($message);
+            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 		
