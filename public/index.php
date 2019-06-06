@@ -52,8 +52,8 @@ $signature = $_SERVER['HTTP_X_LINE_SIGNATURE'];
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 		
             $audioMessageBuilder = new \LINE\LINEBot\MessageBuilder\AudioMessageBuilder('https://arcane-wave-28669.herokuapp.com/win.mp3', 3000);
-			$result = $bot->replyMessage($event['replyToken'], $audioMessageBuilder);
-			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+			$result2 = $bot->replyMessage($event['replyToken'], $audioMessageBuilder);
+			return $result2->getHTTPStatus() . ' ' . $result2->getRawBody();
 
 		}
 
