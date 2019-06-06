@@ -45,12 +45,12 @@ $signature = $_SERVER['HTTP_X_LINE_SIGNATURE'];
 		$userMessage = $event['message']['text'];
 
 		if(strtolower($userMessage) == 'speel lingo')
-		{
+		{/*
 			$message = 'Wat leuk, laten we snel beginnen...';
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
-		
+		*/
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\AudioMessageBuilder('https://arcane-wave-28669.herokuapp.com/win.mp3', 6000);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
