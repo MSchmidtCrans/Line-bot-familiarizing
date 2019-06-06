@@ -45,7 +45,10 @@ $signature = $_SERVER['HTTP_X_LINE_SIGNATURE'];
 		$userMessage = $event['message']['text'];
 		if(strtolower($userMessage) == 'hi')
 		{
-			$message = "Hallo Gorilla";
+			$message = array("type" => "video",
+			"originalContentUrl" => "https://example.com/original.mp4",
+			"previewImageUrl" => "https://example.com/preview.jpg");
+
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
